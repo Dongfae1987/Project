@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+
+	Nameless Geometry by nodethirtythree + Templated.org
+	http://templated.org/ | @templatedorg
+	Released under the Creative Commons Attribution 3.0 License.
+	
+	Note from the author: These templates take quite a bit of time to conceive,
+	design, and finally code. So please, support our efforts by respecting our
+	license: keep our footer credit links intact so people can find out about us
+	and what we do. It's the right thing to do, and we'll love you for it :)
+	
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<script src="localstoragemanager.js"></script>
+		<script src="catalog.js"></script>
+		<script>
+		 if(getCookie("valid") !="true") location.href="login.html";
+		</script>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>PRODUCT PAGE</title>
+		<link href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<style type="text/css">
+		#content
+{ text-align: left;
+  width: 613px;
+  //width: 2000px;
+  padding: 0;}
+	.form_settings
+{ margin: 15px 0 0 0;}
+
+</style>
+<style>
+.title
+{
+    color:white;
+    //background-color: #eeeeee;
+    background-color: #2F2827;
+    //background:#00FF00; 
+    font-family: Arial,Helvetica,sans-serif; 
+    font-size: large;
+    padding: .2em;
+    margin-left: .5em;
+    margin-bottom: .1em;
+    float: right;
+    text-align: left;
+    width: 30%;
+    font-weight: bold;
+    font-variant: small-caps;
+    text-align:right;
+}
+.left
+{ 
+	float: left;
+	width: auto;
+	margin-right: 10px;
+}
+</style>
+
+	</head>
+	<body>
+		<div id="bg">
+			<div id="outer">
+				<div id="header">
+					<div id="logo">
+						<h1>
+							<a href="#">SenTech Multiservices</a>
+						</h1>
+					</div>
+					<div id="nav">
+						<ul>
+							<li class="first active">
+								<script>
+				 					if(getCookie("valid") =="true") document.writeln(" <a href="logoff.html">Logoff</a>");
+									else document.writeln(" <a href="login.html">Login</a>");
+								</script>
+							</li>
+							<li>
+								<a href="products.html">Products</a>
+							</li>
+							<li>
+								<a href="about.html">About</a>
+							</li>
+							<li class="last">
+								<a href="contact.html">Contact</a>
+							</li>
+						</ul>
+						<br class="clear" />
+					</div>
+				</div>
+	     <div id="main">
+	    <div id="content">
+			<h1 style="font: normal 179% 'century gothic', arial, sans-serif;color: #FFFFFF;margin: 0 0 15px 0;padding: 15px 0 5px 0;" >Products</h1>	
+            <script>
+				for(var i=0;i<catalog.length;i++)
+				{
+					document.writeln("<div style='border:solid #121212 2px;background:#FFFFFF;height:190px;background:#d0ccdb;color:black;'>");
+					document.writeln("<a href='"+catalog[i].link+"' />");
+					document.writeln("<span class='left'><img src='"+catalog[i].image+"' style='width:200px' alt='example graphic' /></span>");
+					document.writeln("<div class='title'>"+catalog[i].name+"</div>");
+					document.writeln("<p style='background:#d0ccdb;color:black;'>"+catalog[i].description)+"<br>";       
+					document.writeln("<span style='float:right;text-align:left;padding:.5em;'>");
+					document.writeln("<a href='#' onclick=\"addCookie('"+catalog[i].code+"');storecart();alert('Item Successfully Added!');\" style='color:black;'>Add to Cart</a>&nbsp;&nbsp;<a href='cart.html' style='color:black;'>Goto Cart</a>");
+					document.writeln("</span>");
+					document.writeln("</p>");
+					document.writeln("</div>");		
+					document.writeln("<p>&nbsp;</p>");
+	            }
+			</script>
+	      </div>
+
+			<br class="clear" />
+			</div>
+				
+			</div>
+			<div id="copyright">
+				&copy; SenTech Multiservices| Design: <a href="http://templated.org/free-css-templates/namelessgeometry/">Nameless Geometry</a> by <a href="http://nodethirtythree.com">nodethirtythree</a> + <a href="http://templated.org/">Templated.org</a>
+			</div>
+		</div>
+	</body>
+</html>

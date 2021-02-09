@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+
+	Nameless Geometry by nodethirtythree + Templated.org
+	http://templated.org/ | @templatedorg
+	Released under the Creative Commons Attribution 3.0 License.
+	
+	Note from the author: These templates take quite a bit of time to conceive,
+	design, and finally code. So please, support our efforts by respecting our
+	license: keep our footer credit links intact so people can find out about us
+	and what we do. It's the right thing to do, and we'll love you for it :)
+	
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="localstoragemanager.js"></script>
+<script src="catalog.js"></script>
+<script>
+function validate()
+{
+	alert("start");
+	var password=getCookie(userid.value);
+	if(password==pass.value)
+	{
+		
+		setCookie("valid","true",30);
+		setCookie("whoami",userid.value,30);
+		loadcart();
+		
+		location.href="products.html";
+	}
+	else alert("User/Password Incorrect");
+	
+}
+
+</script>
+
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>LOGIN PAGE</title>
+<link href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="style.css" />	
+<style type="text/css">
+
+#content
+{ text-align: left;
+  width: 613px;
+  padding: 0;}
+/*	.form_settings
+{ margin: 15px 0 0 0;}
+
+.form_settings p
+{ padding: 0 0 4px 0;}
+
+.form_settings span
+{ float: left; 
+  width: 200px; 
+  text-align: left;}
+  
+.form_settings input, .form_settings textarea
+{ padding: 5px; 
+  width: 299px; 
+  font: 100% arial; 
+  border: 1px solid #E5E5DB; 
+  background: #FFF; 
+  color: #47433F;}
+  
+.form_settings .submit
+{ font: 100% arial; 
+  border: 2px; 
+  width: 99px; 
+  //margin: 0 0 0 212px;
+  margin: 1 1 1 1;  
+  height: 33px;
+  padding: 2px 0 3px 0;
+  cursor: pointer; 
+  background: #3B3B3B; 
+  color: #FFF;}
+
+.form_settings textarea, .form_settings select
+{ font: 100% arial; 
+  width: 299px;}
+
+.form_settings select
+{ width: 310px;}
+
+.form_settings .checkbox
+{ margin: 4px 0; 
+  padding: 0; 
+  width: 14px;
+  border: 0;
+  background: none;}*/
+</style>
+</head>
+	<body>
+		<div id="bg">
+			<div id="outer">
+				<div id="header">
+					<div id="logo">
+						<h1>
+							<a href="#" >SenTech Multiservices</a>
+						</h1>
+					</div>
+					<div id="nav">
+						<ul>
+							<li class="first active">
+								<a href="login.html">Login</a>
+							</li>
+							<li>
+								<a href="products.html">Products</a>
+							</li>
+							<li>
+								<a href="about.html">About</a>
+							</li>
+							<li class="last">
+								<a href="contact.html">Contact</a>
+							</li>
+							
+						</ul>
+						<br class="clear" />
+					</div>
+				</div>
+				<div id="main">	
+				    <div id="content">
+					<h1 style="font: normal 179% 'century gothic', arial, sans-serif;color: #FFFFFF; margin: 0 0 15px 0;padding: 15px 0 5px 0;" >Login</h1>
+
+					<form action="#" method="post">
+						<table>
+							<tr><td width="100">Username:</td><td width="200"><input type="text" id="userid"/></td></tr>
+							<tr><td width="100">Password:</td><td width="200"><input type="text" id="pass"/></td></tr>
+							<tr><td colspan="2" align="center"><input type="button"  value="Login" onclick="validate();"/>
+							<br /><a href="registration.html">Register</a>
+							</td></tr>
+						</table>
+					</form>
+					</div>
+					
+					<br class="clear" />
+				</div>
+			</div>
+		</div>
+			<div id="copyright">
+				&copy; SenTech Multiservices| Design: <a href="http://templated.org/free-css-templates/namelessgeometry/">Nameless Geometry</a> by <a href="http://nodethirtythree.com">nodethirtythree</a> + <a href="http://templated.org/">Templated.org</a>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+
+	Nameless Geometry by nodethirtythree + Templated.org
+	http://templated.org/ | @templatedorg
+	Released under the Creative Commons Attribution 3.0 License.
+	
+	Note from the author: These templates take quite a bit of time to conceive,
+	design, and finally code. So please, support our efforts by respecting our
+	license: keep our footer credit links intact so people can find out about us
+	and what we do. It's the right thing to do, and we'll love you for it :)
+	
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+th,td{border:solid .5px black;}
+.right{text-align:right;}
+</style>
+<script src="localstoragemanager.js"></script>
+<script src="catalog.js"></script>
+<script>
+function delete2(name)
+{
+	delCookie(name);
+	storecart();
+	location.reload();
+}
+function update(id)
+{
+	var y=document.getElementById(id+"qty");
+	setCookie(id,y.value,10);
+	storecart();
+	location.reload();
+}
+function cart()
+{
+	var count=0;
+    var str="<table><tr><th>ITEM</th><th>NAME</th><th>QTY</th><th>PRICE</th><th>TOTAL</th></tr>";
+    var total=0;
+    for(var i=0;i<catalog.length;i++)
+    {
+		var qty=getCookie(catalog[i].code);
+		if((qty!=null) && (qty !=0))
+		{
+			count++;
+			var name=catalog[i].code+"qty";
+			total+=(parseInt(qty)*catalog[i].price);
+			var x=parseFloat(catalog[i].price);
+			str+="<tr><td><img src='"+catalog[i].image+"' width='100px'/></td><td>"+catalog[i].name+
+			         "</td><td class='right'><input id='"+name+"' size='2' type='text' value='"+qty+"' /><input type='button' value='Update' id='"+catalog[i].code+"' onclick=update(this.id) /><img width='20px' src='x.png' onclick=delete2('"+catalog[i].code+"') /></td><td class='right'>$"+x.toFixed(2)+
+			         "</td><td class='right'>$"+(parseInt(qty)*x).toFixed(2)+"</td></tr>";
+		}
+	}
+	if(count==0) str="CART EMPTY<br><a href='products.html'>BACK TO SHOPPING</a>";
+	else str+="<tr><td colspan='4'>GRAND TOTAL</td><td class='right'>$"+total.toFixed(2)+"</td></tr></table><a href='shipping.html'>SHIPPING</a>";
+	cartable.innerHTML=str;
+}
+
+</script>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>CART PAGE</title>
+		<link href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+
+<script>
+if(getCookie("valid") !="true") location.href="login.html";
+</script>
+</head>
+	<body onload="cart();">
+		<div id="bg">
+			<div id="outer">
+				<div id="header">
+					<div id="logo">
+						<h1>
+							<a href="#">SenTech Multiservices</a>
+						</h1>
+					</div>
+					<div id="nav">
+						<ul>
+							<li class="first active">
+								<script>
+									if(getCookie("valid") =="true") 
+									{
+										document.writeln(" <a href="logoff.html">Logoff</a>");
+										document.writeln("Logoff</a></td>");
+									}
+									else 
+									{
+										document.writeln(" <a href="login.html">Login</a>");
+									}
+								</script>
+							</li>
+							<li>
+								<a href="products.html">Products</a>
+							</li>
+							<li>
+								<a href="about.html">About</a>
+							</li>
+							<li class="last">
+								<a href="contact.html">Contact</a>
+							</li>
+						</ul>
+						<br class="clear" />
+					</div>
+				</div>
+				<div id="main">
+					
+					<div id="cartable"></div>
+					
+					<br class="clear" />
+				</div>
+				
+			</div>
+			<div id="copyright">
+				&copy; SenTech Multiservices | Design: <a href="http://templated.org/free-css-templates/namelessgeometry/">Nameless Geometry</a> by <a href="http://nodethirtythree.com">nodethirtythree</a> + <a href="http://templated.org/">Templated.org</a>
+			</div>
+		</div>
+	</body>
+</html>

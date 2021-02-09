@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+
+	Nameless Geometry by nodethirtythree + Templated.org
+	http://templated.org/ | @templatedorg
+	Released under the Creative Commons Attribution 3.0 License.
+
+	Note from the author: These templates take quite a bit of time to conceive,
+	design, and finally code. So please, support our efforts by respecting our
+	license: keep our footer credit links intact so people can find out about us
+	and what we do. It's the right thing to do, and we'll love you for it :)
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="localstoragemanager.js"></script>
+<script src="catalog.js"></script>
+<script>
+	if(getCookie("valid") !="true") location.href="login.html";
+</script>
+<script>
+	function logoff()
+	{
+		storecart();
+		delCookie("valid");
+		delCookie("whoami");
+		for(var i=0;i<catalog.length;i++)
+			if(getCookie(catalog[i].code)!=null)
+				delCookie(catalog[i].code);
+		location.href="login.html";
+	}
+</script>		
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>LOG OFF PAGE</title>
+<link href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+	<body>
+		<div id="bg">
+			<div id="outer">
+				<div id="header">
+					<div id="logo">
+						<h1>
+							<a href="#">SenTech Multiservices</a>
+						</h1>
+					</div>
+					<div id="nav">
+						<ul>
+							<li class="first active">
+								<script>
+									if(getCookie("valid") =="true") document.writeln(" <a href="logoff.html">Logoff</a>");
+									else document.writeln(" <a href="login.html">Login</a>");
+								</script>
+							</li>
+							<li>
+								<a href="products.html">Products</a>
+							</li>
+							<li>
+								<a href="about.html">About</a>
+							</li>
+							<li class="last">
+								<a href="contact.html">Contact</a>
+							</li>
+						</ul>
+						<br class="clear" />
+					</div>
+				</div>
+				<div id="main">
+					<div id="content">
+					   <form>
+					   <h1>Logoff</h1>
+					   <center>
+					   <input type="button" value="Logoff" onclick="logoff();" ></center>
+					   </form>
+					</div>
+               <br class="clear" />
+	          </div>
+			</div>
+			
+
+			<div id="copyright">
+				&copy; Your Site Name | Design: <a href="http://templated.org/free-css-templates/namelessgeometry/">Nameless Geometry</a> by <a href="http://nodethirtythree.com">nodethirtythree</a> + <a href="http://templated.org/">Templated.org</a>
+			</div>
+		</div>
+	</body>
+</html>
